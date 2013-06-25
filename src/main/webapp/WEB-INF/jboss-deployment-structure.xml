@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- exclude jboss system given log4.xml to enable log4j.xml inside the war / project to work https://community.jboss.org/message/714814 -->
+<jboss-deployment-structure>
+	<deployment>
+		<exclusions>
+			<module name="org.apache.log4j" />
+			<module name="org.slf4j" />
+		</exclusions>
+	</deployment>
+</jboss-deployment-structure> 
+ 
