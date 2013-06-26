@@ -1,5 +1,8 @@
 package com.vu.scs.flickr.util;
 
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
 
 import javax.crypto.Mac;
@@ -27,12 +30,12 @@ public class Signature {
 	 * @throws java.security.SignatureException
 	 *             when signature generation fails
 	 */
-	public static String signHmacSHA1(String data, String key) throws java.security.SignatureException {
+	public static String signHmacSHA1(String data, String key, String tokenSecret) throws java.security.SignatureException {
 		String result;
 		try {
 
 			// get an hmac_sha1 key from the raw key bytes
-			SecretKeySpec signingKey = new SecretKeySpec(key.getBytes(), HMAC_SHA1_ALGORITHM);
+			SecretKeySpec signingKey = new SecretKeySpec((key + PARAMETER_SEPARATOR + tokenSecret).getBytes(), HMAC_SHA1_ALGORITHM);
 
 			// get an hmac_sha1 Mac instance and initialize with the signing key
 			Mac mac = Mac.getInstance(HMAC_SHA1_ALGORITHM);
@@ -40,7 +43,6 @@ public class Signature {
 
 			// compute the hmac on input data bytes
 			byte[] rawHmac = mac.doFinal(data.getBytes());
-
 
 			// base64-encode the hmac
 			// result = Encoding.EncodeBase64(rawHmac);
@@ -51,4 +53,11 @@ public class Signature {
 		}
 		return result;
 	}
+
+	public static final String ENC = "UTF-8";
+	private static final String PARAMETER_SEPARATOR = "&";
+	private static final String HMAC_SHA1 = "HmacSHA1";
+
+	
+
 }

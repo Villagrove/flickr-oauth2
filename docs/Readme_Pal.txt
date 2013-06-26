@@ -1,4 +1,13 @@
 
+
+****** this project is incomplete*******
+
+good library available for connecting to flickr and upload photos and do all stuff.. still need to do some more work
+
+https://code.google.com/p/flickrj-android/
+
+--------------------------------------------------------------------------------------------------------------
+
 config changes:
 
 change the the attributes in the following files
