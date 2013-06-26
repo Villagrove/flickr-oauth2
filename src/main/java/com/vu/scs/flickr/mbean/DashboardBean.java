@@ -112,20 +112,23 @@ public class DashboardBean implements Serializable {
 			}
 		}
 
-		String newCode = req.getParameter("code");
+		String newCode = req.getParameter("oauth_token");
+		String oauthCodeSecret = req.getParameter("oauth_token_secret");
+		String oauthCallbackConfirmed = req.getParameter("oauth_callback_confirmed");
 
-		logger.debug("newCode received: " + newCode);
+		logger.debug("newCode received oauth_token: " + newCode + ", oauth_token_secret:" + oauthCodeSecret + ", oauthCallbackConfirmed: "
+				+ oauthCallbackConfirmed);
 
 		if (newCode != null) {
-			int ret = retrieveToken(newCode);
+			int ret = retrieveToken(newCode, oauthCodeSecret);
 			this.code = newCode;
 		}
 
 	}
 
-	private int retrieveToken(String code) {
-		logger.debug("trying to retrieve token with the code: " + code);
-		
+	private int retrieveToken(String code, String oauthCodeSecret) {
+		logger.debug("trying to retrieve token with the code: " + code + ", oauthCodeSecret: " + oauthCodeSecret);
+
 		String redirect_uri = Constants.FBR_DASHBOARD_URI;
 
 		HttpClient client = new DefaultHttpClient();
@@ -133,8 +136,8 @@ public class DashboardBean implements Serializable {
 
 		try {
 
-			String[][] parameters = { { "client_id", Constants.CLIENT_APP_ID }, { "client_secret", Constants.APP_SECRET },
-					{ "redirect_uri", redirect_uri }, { "code", code } };
+			String[][] parameters = { { "client_id", Constants.CLIENT_APP_ID }, { "client_secret", Constants.APP_SECRET }, { "redirect_uri", redirect_uri },
+					{ "code", code } };
 
 			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(5);
 
@@ -201,7 +204,7 @@ public class DashboardBean implements Serializable {
 			personDetail = basicProfileService.getUserBasicProfile(accessToken);
 		} catch (OAuthError e) {
 			this.setOauthError(e);
-			logger.error("OAuthError received: "+ e.getErrorMessage());
+			logger.error("OAuthError received: " + e.getErrorMessage());
 			return "error";
 		}
 
@@ -223,7 +226,7 @@ public class DashboardBean implements Serializable {
 			personList = friendsListService.getFriendsList(accessToken);
 		} catch (OAuthError e) {
 			this.setOauthError(e);
-			logger.error("OAuthError received: "+ e.getErrorMessage());
+			logger.error("OAuthError received: " + e.getErrorMessage());
 			return "error";
 		}
 		logger.debug("end of friendsList.");

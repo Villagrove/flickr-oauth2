@@ -3,17 +3,20 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
-	<title>Facebook Basic Profile Information</title>
+	<title>Flickr Basic Profile Information</title>
+	<ui:include src="/include.xhtml" />
+	
 	<h:outputStylesheet name="common.css" library="css" />
 	<h:outputScript library="javascript" name="common.js" target="body" />
 </h:head>
 
 <h:body>
 
-	<h3 align="center">Facebook Basic Profile</h3>
+	<h3 align="center">Flickr Basic Profile</h3>
 	<br></br>
 	<h:form>
 
@@ -73,7 +76,7 @@
 
 <br></br><br></br><br></br>
 		<div align="center">
-			<h:commandButton value="Go back to Dashboard" onclick="loginToFacebookClient();return false;"></h:commandButton>
+			<h:commandButton value="Go back to Dashboard" onclick="loginToFlickrClient();return false;"></h:commandButton>
 		</div>
 
 	</h:form>

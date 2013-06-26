@@ -3,10 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+    
 
 <h:head>
-	<title>Facebook Reader logged out</title>
+	<title>Flickr Reader logged out</title>
+	<ui:include src="/include.xhtml" />
+	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<h:outputStylesheet name="common.css" library="css" />
 	<h:outputScript library="javascript" name="common.js" target="body" />
@@ -62,15 +66,15 @@
 				<tr>
 					<td height="30">
 						<div align="center">
-							<h3>Continue login with Facebook:</h3>
+							<h3>Continue login with Flickr:</h3>
 						</div>
 					</td>
 				</tr>
 				<tr>
 					<td height="30" align="center"><h:graphicImage
-							library="images" name="login-with-facebook-360.jpg"
-							alt="Login With Facebook Account" width="293" height="193"
-							styleClass="pointerCurs" onclick="loginToFacebookClient();" /></td>
+							library="images" name="login-with-flickr-360.jpg"
+							alt="Login With Flickr Account" width="293" height="193"
+							styleClass="pointerCurs" onclick="loginToFlickrClient();" /></td>
 				</tr>
 
 				<tr>

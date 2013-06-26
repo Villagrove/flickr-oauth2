@@ -3,10 +3,13 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
-	<title>Facebook Reader</title>
+	<title>Flickr Reader</title>
+	<ui:include src="/include.xhtml" />
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<h:outputStylesheet name="common.css" library="css" />
 	<h:outputScript library="javascript" name="common.js" target="body" />
@@ -15,18 +18,35 @@
 <h:body>
 	<h:form id="homeForm">
 
-		<h2 align="center">Welcome to Facebook Reader</h2>
-		
+		<h2 align="center">Welcome to Flickr Reader</h2>
+
 		<div>
 			<table align="center">
 				<tr>
 					<td height="30"></td>
 				</tr>
 				<tr>
-					<td height="30" align="center"><h:graphicImage
-							library="images" name="login-with-facebook-360.jpg"
-							alt="Login With Facebook Account" width="293" height="193"
-							styleClass="pointerCurs" onclick="loginToFacebookClient();" /></td>
+					<!-- <td height="30" align="center">
+					<h:graphicImage
+							library="images" name="flickr-logo.jpg"
+							alt="Login With Flickr Account" width="293" height="193"
+							styleClass="pointerCurs" onclick="loginToFlickrClient();" />
+							</td> -->
+							
+							
+							<td height="30" align="center">
+							
+							<h:commandButton image="flickr-logo.jpg"
+						action="#{homeBean.requestAccessToken}">
+						
+						
+						</h:commandButton>
+						
+						</td>
+						
+						
+						
+						
 				</tr>
 
 				<tr>
@@ -34,20 +54,14 @@
 				</tr>
 			</table>
 		</div>
-                
 
-		
-		<div align="center">Developed by Villagrove Team Members:</div>
+
+
+		<div align="center">Developed by Blue Diamond:</div>
 
 		<table align="center">
 			<tr>
-				<td>Palanisamy Ramamoorthy</td>
-			</tr>
-			<tr>
-				<td>Nirup Koneru</td>
-			</tr>
-			<tr>
-				<td>Thomas Trycieki</td>
+				<td>Blue Diamond Inc</td>
 			</tr>
 		</table>
 	</h:form>

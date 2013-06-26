@@ -3,34 +3,41 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>FBR Dashboard</title>
+	<ui:include src="/include.xhtml" />
+
 	<h:outputStylesheet name="common.css" library="css" />
+	<h:outputScript library="javascript" name="2.0.0-crypto-sha1.js"
+		target="body" />
+	<h:outputScript library="javascript" name="2.0.0-hmac-min.js"
+		target="body" />
 	<h:outputScript library="javascript" name="common.js" target="body" />
 
-	<h2 align="center">Facebook Reader Dashboard</h2>
+	<h2 align="center">Flickr Reader Dashboard</h2>
 </h:head>
 
 <h:body onload="validateAccessToken();return false;">
 	<h:form id="dashboardForm">
 		<h:inputHidden id="code" value="#{dashboardBean.code}" required="true" />
-		<h:inputHidden id="accessToken" value="#{dashboardBean.accessToken}" 
+		<h:inputHidden id="accessToken" value="#{dashboardBean.accessToken}"
 			required="true" />
 
 		<table align="center">
 
 			<tr>
 				<td height="100" align="center">Successfully logged in with
-					Facebook Credentials</td>
+					Flickr Credentials</td>
 			</tr>
 
 			<tr>
 				<td height="30" align="center"><h:commandButton
-						value="Get My Facebook Profile"
+						value="Get My Flickr Profile"
 						action="#{dashboardBean.userBasicProfile}"></h:commandButton></td>
 			</tr>
 			<tr>
@@ -39,24 +46,21 @@
 
 			<tr>
 				<td height="30" align="center"><h:commandButton
-						value="Get My Facebook Friends"
+						value="Get My Flickr Friends"
 						action="#{dashboardBean.friendsList}"></h:commandButton></td>
 			</tr>
 
 			<tr>
-				<td height="50">
-				
-				</td>
+				<td height="50"></td>
 			</tr>
-    
+
 			<tr>
-				<td height="30" align="center">
-					<h:commandButton
-						value="Sign out" onclick="logoutFromFacebookClient();return false;"></h:commandButton>
+				<td height="30" align="center"><h:commandButton
+						value="Sign out" onclick="logoutFromFlickrClient();return false;"></h:commandButton>
 				</td>
 			</tr>
 		</table>
-                
+
 
 	</h:form>
 </h:body>

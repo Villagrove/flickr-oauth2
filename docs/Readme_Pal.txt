@@ -5,14 +5,16 @@ change the the attributes in the following files
 src/main/java/com/vu/scs/fb/util/Constants.java
 src/main/webapp/resources/javascript/common.js
 
-attributes to be updated:
+attributes to be updated: in java file
 		 String HOST_PREFIX = "http://localhost:8080";
-		 String CLIENT_APP_ID = "247266912049837";
-		 String APP_SECRET = "5624e24f6f98a2835da033422ba93798";
+		 String CLIENT_APP_ID = "645787b14ab25e9ec621d25f7ad78ba1";
+		 String APP_SECRET = "d8ec5bcf1e51cf34";
 		 
-		  var HOST_PREFIX = "http://localhost:8080";
-var clientAppId = "247266912049837";
-var appSecret = "5624e24f6f98a2835da033422ba93798";
+
+in javascript file:
+var HOST_PREFIX = "http://localhost:8080";
+var clientAppId = "645787b14ab25e9ec621d25f7ad78ba1";
+var appSecret = "d8ec5bcf1e51cf34";
 
 
 --------------------------------------------------------------------------------------------------------------
@@ -29,10 +31,10 @@ or
 http://127.0.0.1:9990/console
 
 --------------------------------------------------------------------------------------------------------------
-to modify / update the app registration in facebook:
-https://developers.facebook.com/
+to modify / update the app registration in flickr:
+https://developers.flickr.com/
 
-login with facebook suer id and click on apps on the top to make changes for the app registration
+login with flickr suer id and click on apps on the top to make changes for the app registration
 
 --------------------------------------------------------------------------------------------------------------
 
@@ -44,4 +46,15 @@ Shutting down jboss 7.1.1 AS7 in domain mode
 ./domain.sh --connect command=/host=master:shutdown
 
 --------------------------------------------------------------------------------------------------------------
+
+flickr developer guides:
+http://www.flickr.com/services/api/misc.overview.html
+
+get dev started:
+http://www.flickr.com/services/api/auth.oauth.html#request_token
+
+
+--------------------------------------------------------------------------------------------------------------
+how to sign in javascript:
+http://stackoverflow.com/questions/4337959/need-hmac-sha1-encryption-library-for-javascript
 --------------------------------------------------------------------------------------------------------------

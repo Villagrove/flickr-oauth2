@@ -74,7 +74,7 @@ public class BasicProfileService {
 		} catch (IOException e) {
 			logger.error("IOException received: ", e);
 		}
-		// Now do your thing with the facebook response.
+		// Now do your thing with the flickr response.
 		return personDetail;
 	}
 

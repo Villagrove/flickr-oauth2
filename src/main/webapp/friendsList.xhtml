@@ -3,17 +3,20 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
-	<title>Facebook Friends List</title>
+	<title>Flickr Friends List</title>
+	<ui:include src="/include.xhtml" />
+	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<h:outputStylesheet name="common.css" library="css" />
 	<h:outputScript library="javascript" name="common.js" target="body" />
 </h:head>
 
 <h:body>
-	<h3 align="center">Facebook Friends List</h3>
+	<h3 align="center">Flickr Friends List</h3>
 	<br></br>
 
 	<h:form id="friendsForm">
@@ -39,7 +42,7 @@
 		<br></br>
 		<div align="center">
 			<h:commandButton value="Go back to Dashboard"
-				onclick="loginToFacebookClient();return false;"></h:commandButton>
+				onclick="loginToFlickrClient();return false;"></h:commandButton>
 		</div>
 		<br></br>
 	</h:form>

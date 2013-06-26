@@ -3,10 +3,13 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
-	<title>Facebook Reader Access Denied</title>
+	<title>Flickr Reader Access Denied</title>
+	<ui:include src="/include.xhtml" />
+	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<h:outputStylesheet name="common.css" library="css" />
 	<h:outputScript library="javascript" name="common.js" target="body" />
@@ -15,7 +18,7 @@
 <h:body>
 	<h:form id="accessDeniedForm">
 
-		<h2 align="center" style="color:red;">You need to Allow FBR App in Facebook to continue...!</h2>
+		<h2 align="center" style="color:red;">You need to Allow FBR App in Flickr to continue...!</h2>
 			<div>
 				<table align="center">
 					<tr>
@@ -25,10 +28,10 @@
 						<td height="30" align="center">
 						 
 						<h:graphicImage
-								library="images" name="login-with-facebook-360.jpg"
-								alt="Login With Facebook Account" width="293" height="193"
+								library="images" name="login-with-flickr-360.jpg"
+								alt="Login With Flickr Account" width="293" height="193"
 								styleClass="pointerCurs"
-								onclick="loginToFacebookClient();" />
+								onclick="loginToFlickrClient();" />
 								</td>
 					</tr>
 					
@@ -41,7 +44,7 @@
 				</table>
 
 			</div>
-			<div align="center">Facebook Denied Access to FBR</div>
+			<div align="center">Flickr Denied Access to FBR</div>
 
 
 			<table align="center">
